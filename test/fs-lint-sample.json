@@ -1,0 +1,18 @@
+{
+  "rules": [
+    {
+      "files": [
+        "assets/js/**/*.coffee",
+        "lib/{,*/}*.coffee",
+        "routes/*.coffee"
+      ],
+      "naming": "lowerCamelCase",
+      "level": "error"
+    },
+    {
+      "files": "assets/css/**/*.styl",
+      "naming": "lowercase-dash",
+      "level": "warning"
+    }
+  ]
+}
