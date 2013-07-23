@@ -23,7 +23,7 @@ module.exports = ->
     config = JSON.parse(fs.readFileSync(configPath, 'utf8'))
     fsLint = new FsLint
     fsLint.on 'entry', (entry) ->
-        message = "violates '#{entry.namingName}' naming: #{entry.filePath}"
+        message = "violates '#{entry.naming}' naming: #{entry.filePath}"
         unless entry.isError
             return log.warning message
         log.error message

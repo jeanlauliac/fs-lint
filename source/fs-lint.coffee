@@ -24,7 +24,7 @@ class FsLint extends EventEmitter
             if naming.test(path.basename(filePath))
                 continue
             @emit 'entry', @createEntry(isError, filePath, namingName)
-            okay = false
+            okay = false if isError
         okay
 
     processRule: (rule) ->
