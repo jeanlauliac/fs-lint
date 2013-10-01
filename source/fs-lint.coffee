@@ -10,10 +10,10 @@ _           = require 'lodash'
 {EventEmitter} = require 'events'
 
 namings =
-    'lowerCamelCase'        : /^_*[a-z]+([A-Z][a-z]+|[0-9]+)*[a-z.]*$/
-    'UpperCamelCase'        : /^_*([A-Z][a-z]+|[0-9]+)+[a-z.]*$/
-    'lowercase-dash'        : /^_*[a-z0-9]+(-[a-z0-9]+)*[a-z.]*$/
-    'lowercase_underscore'  : /^_*[a-z0-9]+(_[a-z0-9]+)*[a-z.]*$/
+    'lowerCamelCase'        : /^_*[a-z]+([A-Z][a-z]+|[0-9]+)*[-_a-z.]*$/
+    'UpperCamelCase'        : /^_*([A-Z][a-z]+|[0-9]+)+[-_a-z.]*$/
+    'lowercase-dash'        : /^_*[a-z0-9]+(-[a-z0-9]+)*[-_a-z.]*$/
+    'lowercase_underscore'  : /^_*[a-z0-9]+(_[a-z0-9]+)*[-_a-z.]*$/
 
 class FsLint extends EventEmitter
     createEntry: (isError, filePath, naming) ->
