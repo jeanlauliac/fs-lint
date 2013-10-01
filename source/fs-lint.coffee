@@ -2,6 +2,7 @@
 #
 # This tool lints a structure of files and folders, enforcing the type of
 # files, as well as the file naming.
+
 'use strict'
 path        = require 'path'
 glob        = require 'glob'

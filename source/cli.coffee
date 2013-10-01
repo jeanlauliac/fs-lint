@@ -1,7 +1,11 @@
-FsLint      = require './fs-lint'
-log         = require('yadsil')('fs-lint')
+# The command line interface.
+
+'use strict'
 commander   = require 'commander'
 fs          = require 'fs'
+FsLint      = require './fs-lint'
+log         = require('yadsil')('fs-lint')
+sysexits    = require 'sysexits'
 
 processCli = ->
     commander
@@ -14,12 +18,12 @@ processCli = ->
     log.color commander.color
     commander
 
-module.exports = ->
-    commander = processCli()
-    configPath = commander.config ? '.fs-lint'
+do ->
+    options = processCli()
+    configPath = options.config ? '.fs-lint'
     unless fs.existsSync(configPath)
         log.error "can not find '#{configPath}' config. file"
-        process.exit 2
+        process.exit sysexits.NOINPUT
     config = JSON.parse(fs.readFileSync(configPath, 'utf8'))
     fsLint = new FsLint
     fsLint.on 'entry', (entry) ->
