@@ -2,6 +2,7 @@
   "name": "fs-lint",
   "version": "1.0.1",
   "description": "File naming consistency verification tool.",
+  "main": "lib/fs-lint.js",
   "keywords": [
     "file",
     "files",
