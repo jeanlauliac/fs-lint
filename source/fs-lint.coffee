@@ -12,7 +12,7 @@ _           = require 'lodash'
 namings =
     'lowerCamelCase'        : /^_*[a-z][A-Za-z0-9]*[-_a-z.]*$/
     'UpperCamelCase'        : /^_*[A-Z][A-Za-z0-9]*[-_a-z.]*$/
-    'lowercase-dash'        : /^_*[a-z0-9]+(-[a-z0-9]+)*[-_a-z.]*$/
+    'lowercase-dash'        : /^_*[a-z0-9]+(-[a-z0-9]+)*[-a-z.]*$/
     'lowercase_underscore'  : /^_*[a-z0-9]+(_[a-z0-9]+)*[-_a-z.]*$/
 
 class FsLint extends EventEmitter
